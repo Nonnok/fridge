@@ -134,6 +134,7 @@
       <th>メモ</th>
     </tr>
 
+    
     @foreach($items as $item)
     <tr>
       <!-- <form action="{{ route('fridge.delete', ['id' => $item->id]) }}" method="post">
@@ -142,11 +143,7 @@
         <td class="check-box">
           <input type="checkbox" name="checked[]" value="{{$item->id}}">
         </td> -->
-
-        <p>
-          {{ $warging }}
-        </p>
-
+        
         <form action="{{ route('fridge.update' , ['id' => $item->id]) }}" method="post">
           @csrf
           <td>

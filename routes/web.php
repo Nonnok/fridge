@@ -12,9 +12,6 @@ Route::post('/fridge/create', [FridgeController::class, 'create']);
 Route::post('/fridge/update/{id}', [FridgeController::class, 'update'])->name('fridge.update');
 Route::post('/fridge/delete', [FridgeController::class, 'delete'])->name('fridge.delete');
 
+// Route::get('/fridge/warning', [FridgeController::class], 'index')->name('warning');
+
 Route::get('/fridge/warning', [FridgeController::class], 'warning')->name('warning');
-
-
-// Route::post('/fridge/update/{id}', [FridgeController::class, 'edit']);
-// Route::post('/fridge/delete/{id}', [FridgeController::class, 'remove']);
-// Route::post('/fridge/delete/{id}', [FridgeController::class, 'delete']);

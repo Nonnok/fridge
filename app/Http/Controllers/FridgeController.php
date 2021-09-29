@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Carbon\Carbon;
 
 use App\Models\Fridge;
 use Illuminate\Http\Request;
@@ -54,21 +54,17 @@ class FridgeController extends Controller
         Fridge::find($request->id)->delete();
         return redirect('/');
     }
-    // public function delete(Request $request)
-    // {
-    //     $validateDate = $request->validate([
-    //         'checked' => 'array|required'
-    //     ]);
-    //     Fridge::destroy($request->checked);
-    //     return redirect('/');
-    // }
 
-    public function tuuti(Requesst $request)
+    public function notifications(Request $request)
     {
-        $now = date();
-        $expiry_date = Fridge::find($request->id);
-        $waring = Fridge::where('expiry_date') <= ('now' + 3)->get();
+        $today = date("Y-m-d H:i:s");
 
-        return view('/', ['warning' => 'expiry_dateisnear']);
     }
 }
+
+
+// メモ
+// 賞味期限通知昨日の考え方
+// select 品物 where 賞味期限 <= (現在日時+3日) group by 品物
+
+// 通知 for English → notification
